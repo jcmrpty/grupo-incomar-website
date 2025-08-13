@@ -110,31 +110,46 @@ export default function Home() {
       </p>
     </div>
 
-    <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-10">
+    <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-6">
       
-      {/* Carga Marítima */}
-      <div className="group bg-[#0f172a] w-72 mx-auto p-8 px-6 rounded-xl shadow-lg">
-        <div className="flex justify-center">
-          <svg
-            className="group-hover:-translate-y-6 duration-700 text-[60px] text-[#93c5fd]"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            width="1em"
-            height="1em"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-          </svg>
-        </div>
-        <div className="pt-16 group-hover:-translate-y-6 duration-700 text-center">
-          <h3 className="text-3xl font-bold text-white">
-            Carga<br />Marítima
-          </h3>
+      {/* Carga Marítima con imagen de fondo */}
+      <div className="group bg-[#0f172a]/80 p-8 px-6 rounded-xl shadow-lg relative overflow-hidden">
+        {/* Imagen de fondo más visible */}
+        <div 
+          className="absolute inset-0 opacity-40 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url("/images/container-ship-hero.jpg")',
+            filter: 'blur(1px)'
+          }}
+        ></div>
+        
+        {/* Overlay más sutil para mejor contraste */}
+        <div className="absolute inset-0 bg-[#0f172a]/40"></div>
+        
+        {/* Contenido por encima del fondo */}
+        <div className="relative z-10">
+          <div className="flex justify-center">
+            <svg
+              className="group-hover:-translate-y-6 duration-700 text-[60px] text-[#93c5fd] drop-shadow-lg"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              width="1em"
+              height="1em"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            </svg>
+          </div>
+          <div className="pt-16 group-hover:-translate-y-6 duration-700 text-center">
+            <h3 className="text-3xl font-bold text-white drop-shadow-lg">
+              Carga<br />Marítima
+            </h3>
+          </div>
         </div>
       </div>
 
       {/* Carga Terrestre */}
-      <div className="group bg-[#1e40af] w-72 mx-auto p-8 px-6 rounded-xl shadow-lg">
+      <div className="group bg-[#1e40af] p-8 px-6 rounded-xl shadow-lg">
         <div className="flex justify-center">
           <svg
             className="group-hover:-translate-y-6 duration-700 text-[60px] text-[#bfdbfe]"
@@ -155,7 +170,7 @@ export default function Home() {
       </div>
 
       {/* Trámite Aduanal */}
-      <div className="group bg-[#3b82f6] w-72 mx-auto p-8 px-6 rounded-xl shadow-lg">
+      <div className="group bg-[#3b82f6] p-8 px-6 rounded-xl shadow-lg">
         <div className="flex justify-center">
           <svg
             className="group-hover:-translate-y-6 duration-700 text-[60px] text-[#dbeafe]"
@@ -176,7 +191,7 @@ export default function Home() {
       </div>
 
       {/* Seguros de Carga */}
-      <div className="group bg-[#93c5fd] w-72 mx-auto p-8 px-6 rounded-xl shadow-lg">
+      <div className="group bg-[#93c5fd] p-8 px-6 rounded-xl shadow-lg">
         <div className="flex justify-center">
           <svg
             className="group-hover:-translate-y-6 duration-700 text-[60px] text-[#1e40af]"
@@ -211,7 +226,6 @@ export default function Home() {
     </div>
   </div>
 </section>
-
         {/* Propuesta de valor final */}
         <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl p-6 mt-6">
           <p className="text-gray-700 leading-relaxed">
